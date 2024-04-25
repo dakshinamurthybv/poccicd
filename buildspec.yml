@@ -1,0 +1,6 @@
+version: 0.2
+
+phases:
+  build:
+    commands:
+      - psql -h your-rds-endpoint -U your-db-username -d your-db-name -f your-script.sql
