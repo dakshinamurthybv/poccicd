@@ -12,6 +12,6 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Show databases
-      run: sqlcmd -h ${{ secrets.DB_HOSTNAME }} --port 1433 -u${{ secrets.DB_USER }} -p${{ secrets.DB_PASSWORD }} -e "Select getdate()";
+      run: sqlcmd -s ${{ secrets.DB_HOSTNAME }} --port 1433 -u${{ secrets.DB_USER }} -p${{ secrets.DB_PASSWORD }} -q "Select getdate()";
     - name: Run a sample SQL on remote
       run: sqlcmd -h ${{ secrets.DB_HOSTNAME }} --port 1433 -u${{ secrets.DB_USER }} -p${{ secrets.DB_PASSWORD }} -e "source createdb.sql";
